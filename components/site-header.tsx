@@ -53,7 +53,7 @@ export function SiteHeader() {
             </div>
             <div className="flex flex-col">
               <span className="font-bold tracking-tight text-white text-base sm:text-lg flex items-center gap-1.5">
-                NEXIS<span className="text-cyan-400">.AI</span>
+                WRAP<span className="text-cyan-400">VECTOR</span>
               </span>
             </div>
           </Link>
@@ -125,7 +125,7 @@ export function SiteHeader() {
                         className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]"
                       />
                     </div>
-                    <span className="font-bold text-white text-lg">NEXIS<span className="text-cyan-400">.AI</span></span>
+                    <span className="font-bold text-white text-lg">WRAP<span className="text-cyan-400">VECTOR</span></span>
                   </div>
 
                   <nav className="flex flex-col gap-2">

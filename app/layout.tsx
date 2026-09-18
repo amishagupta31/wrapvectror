@@ -11,7 +11,7 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
-  title: "NEXIS.AI | AI Agents, Autonomous Systems & Scalable Software",
+  title: "WrapVector | AI Agents, Autonomous Systems & Scalable Software",
   description:
     "We build AI-powered products, intelligent agents, and automation systems that turn complex business processes into seamless digital experiences.",
 }

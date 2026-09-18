@@ -21,8 +21,8 @@ export default function Page() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "NEXIS.AI",
-    url: "https://nexis.ai",
+    name: "WrapVector",
+    url: "https://wrapvector.com",
     description:
       "We build AI-powered products, intelligent agents, and automation systems that turn complex business processes into seamless digital experiences.",
     knowsAbout: [

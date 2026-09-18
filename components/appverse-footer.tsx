@@ -54,7 +54,7 @@ export function AppverseFooter() {
                 />
               </div>
               <span className="font-bold text-white text-lg tracking-tight">
-                NEXIS<span className="text-cyan-400">.AI</span>
+                WRAP<span className="text-cyan-400">VECTOR</span>
               </span>
             </Link>
 
@@ -143,7 +143,7 @@ export function AppverseFooter() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
           <div>
-            © {new Date().getFullYear()} NEXIS AI Systems Inc. All rights reserved.
+            © {new Date().getFullYear()} WrapVector Systems Inc. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <span className="hover:text-zinc-300 transition-colors cursor-pointer">Privacy Architecture</span>
