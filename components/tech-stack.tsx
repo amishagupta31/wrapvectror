@@ -80,15 +80,10 @@ export function TechStack() {
   return (
     <section id="tech" className="relative py-28 sm:py-36 overflow-hidden bg-black/60 scroll-mt-20">
       <span id="technology" className="absolute -top-24" />
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Cpu className="w-3.5 h-3.5 text-blue-400" />
-            <span>Architecture & Stack</span>
-          </div>
-
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
             Built With The Technology Of Tomorrow.
           </h2>

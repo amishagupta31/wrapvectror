@@ -4,6 +4,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight, Linkedin, Instagram, Github, Twitter } from "lucide-react"
 
+import { WrapVectorLogo } from "@/components/wrapvector-logo"
+
 export function AppverseFooter() {
   const socials = [
     { label: "LinkedIn", href: "https://www.linkedin.com/company/wrapvector/", icon: Linkedin },
@@ -14,21 +16,13 @@ export function AppverseFooter() {
 
   return (
     <footer className="relative border-t border-white/10 bg-black py-10 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+      <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-white/10">
           
           {/* Left: Brand Logo & Tagline */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center p-1 shadow-[0_0_12px_rgba(0,71,255,0.3)]">
-                <Image
-                  src="/images/agency-logo.png"
-                  alt="WrapVector Logo"
-                  width={44}
-                  height={28}
-                  className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,71,255,0.8)]"
-                />
-              </div>
+              <WrapVectorLogo className="h-7 w-auto text-white" />
               <span className="font-extrabold text-white text-xl tracking-tight">
                 WRAP<span className="text-[#0047FF]">VECTOR</span>
               </span>

@@ -80,11 +80,6 @@ export function AgentShowcase() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Bot className="w-3.5 h-3.5 text-blue-400" />
-            <span>Autonomous Intelligence</span>
-          </div>
-
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
             Meet Your New Digital Workforce.
           </h2>

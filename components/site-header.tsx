@@ -30,10 +30,9 @@ export function SiteHeader() {
 
   const navLinks = [
     { href: "#services", label: "Services" },
-    { href: "#about", label: "About Us" },
+    { href: "/About", label: "About Us" },
     { href: "#work", label: "Our Work" },
-    { href: "#tech", label: "Tech" },
-    { href: "#team", label: "Team" },
+    { href: "#contact", label: "Contact" },
   ]
 
   return (

@@ -26,7 +26,7 @@ export function ContactSection() {
         {/* Ambient Subtle Blue Glow */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-blue-600/10 blur-[130px] pointer-events-none rounded-full" />
 
-        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
+        <div className="w-full max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Column: Heading */}
             <div className="lg:col-span-7 space-y-4">

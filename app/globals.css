@@ -337,3 +337,12 @@ a[href*="v0.dev"] *,
   pointer-events: none !important;
   opacity: 0 !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.project-scroll-card {
+  will-change: opacity, transform;
+}
+

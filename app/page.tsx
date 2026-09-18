@@ -1,13 +1,13 @@
 import { SiteHeader } from "@/components/site-header"
 import { Hero } from "@/components/hero"
+import { MetricsStrip } from "@/components/metrics-strip"
 import { ValueProposition } from "@/components/value-prop"
-import { CascadingStats } from "@/components/cascading-stats"
 import { ServicesSection } from "@/components/services-section"
+import { ClientTestimonials } from "@/components/client-testimonials"
 import { AgentShowcase } from "@/components/agent-showcase"
 import { AutomationSection } from "@/components/automation-section"
 import { WhyUsSection } from "@/components/why-us"
 import { ProcessSection } from "@/components/process-section"
-import { TechStack } from "@/components/tech-stack"
 import { WorkSection } from "@/components/work-section"
 import { ContactSection } from "@/components/contact-section"
 import { AppverseFooter } from "@/components/appverse-footer"
@@ -47,14 +47,14 @@ export default function Page() {
       <main className="min-h-[100dvh] text-white selection:bg-[#0047FF] selection:text-white">
         <SiteHeader />
         <Hero />
+        <MetricsStrip />
         <ValueProposition />
-        <CascadingStats />
         <ServicesSection />
+        <ClientTestimonials />
         <AgentShowcase />
         <AutomationSection />
         <WhyUsSection />
         <ProcessSection />
-        <TechStack />
         <WorkSection />
         <ContactSection />
         <AppverseFooter />
