@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import Plasma from "@/components/plasma"
+import { ConnectModal } from "@/components/connect-modal"
 import { Suspense } from "react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
@@ -75,6 +76,7 @@ export default function RootLayout({
             <Plasma color="#9ca3af" speed={0.8} direction="forward" scale={1.5} opacity={0.4} mouseInteractive={true} />
           </div>
           <div className="relative z-10">{children}</div>
+          <ConnectModal />
         </Suspense>
 
         {/* Vercel Speed Insights and Analytics components */}

@@ -32,8 +32,8 @@ export function WhyUsSection() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
-            We Don't Just Ship Features. <br className="hidden sm:inline" />
-            <span className="text-[#0047FF]">We Engineer Systems.</span>
+            We Don't Just Ship Features <br className="hidden sm:inline" />
+            <span className="text-[#0047FF]">We Engineer Systems</span>
           </h2>
 
           <div className="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/10 max-w-2xl mx-auto">

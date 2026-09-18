@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, ArrowUpRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import { openConnectModal } from "@/components/connect-modal"
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
+  const [sheetOpen, setSheetOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,27 +92,25 @@ export function SiteHeader() {
           {/* Right CTA */}
           <div className="hidden sm:flex items-center gap-3 xl:gap-4 flex-shrink-0">
             <Button
-              asChild
-              className="relative overflow-hidden group bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-blue-400/40 shadow-[0_0_20px_rgba(0,71,255,0.4)] hover:shadow-[0_0_28px_rgba(0,71,255,0.6)] hover:scale-[1.02] transition-all whitespace-nowrap"
+              onClick={() => openConnectModal()}
+              className="relative overflow-hidden group bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-blue-400/40 shadow-[0_0_20px_rgba(0,71,255,0.4)] hover:shadow-[0_0_28px_rgba(0,71,255,0.6)] hover:scale-[1.02] transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
             >
-              <a href="#contact" className="flex items-center gap-1.5">
-                <span>Build With Us</span>
-                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
+              <span>Build With Us</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Button>
           </div>
 
           {/* Mobile Nav Drawer */}
           <div className="lg:hidden flex items-center gap-2 flex-shrink-0">
             <Button
-              asChild
+              onClick={() => openConnectModal()}
               size="sm"
               className="sm:hidden bg-[#0047FF] text-white font-semibold text-xs px-3.5 py-1.5 rounded-full hover:bg-[#0038e0]"
             >
-              <a href="#contact">Build →</a>
+              Build →
             </Button>
 
-            <Sheet>
+            <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="outline"
@@ -141,6 +141,7 @@ export function SiteHeader() {
                       <a
                         key={link.href}
                         href={link.href}
+                        onClick={() => setSheetOpen(false)}
                         className="flex items-center justify-between p-3 rounded-xl text-zinc-200 hover:text-blue-400 hover:bg-white/5 transition-all text-sm font-medium"
                       >
                         <span>{link.label}</span>
@@ -151,8 +152,14 @@ export function SiteHeader() {
                 </div>
 
                 <div className="pt-6 border-t border-white/10">
-                  <Button asChild className="w-full bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold py-3 rounded-xl shadow-lg shadow-blue-600/30">
-                    <a href="#contact">Build With Us →</a>
+                  <Button
+                    onClick={() => {
+                      setSheetOpen(false)
+                      openConnectModal()
+                    }}
+                    className="w-full bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold py-3 rounded-xl shadow-lg shadow-blue-600/30"
+                  >
+                    Build With Us →
                   </Button>
                 </div>
               </SheetContent>

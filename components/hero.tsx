@@ -5,6 +5,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Bot, Cpu, CheckCircle2, Terminal, Zap, Shield, Sparkles, Activity, Layers, Workflow } from "lucide-react"
 
+import { openConnectModal } from "@/components/connect-modal"
+
 export function Hero() {
   const [activeTab, setActiveTab] = useState<"orchestrator" | "workflow" | "neural">("orchestrator")
   const [tick, setTick] = useState(0)
@@ -51,11 +53,11 @@ export function Hero() {
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.05] max-w-5xl">
-            <span className="block text-white">Build Smarter.</span>
+            <span className="block text-white">Build Smarter</span>
             <span className="block text-[#0047FF]">
-              Automate Everything.
+              Automate Everything
             </span>
-            <span className="block text-zinc-300">Scale Faster.</span>
+            <span className="block text-zinc-300">Scale Faster</span>
           </h1>
 
           {/* Supporting Headline */}
@@ -66,14 +68,12 @@ export function Hero() {
           {/* Primary & Secondary CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <Button
-              asChild
+              onClick={() => openConnectModal()}
               size="lg"
-              className="w-full sm:w-auto bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-base px-8 py-6 rounded-full border border-blue-400/40 shadow-[0_0_25px_rgba(0,71,255,0.4)] hover:shadow-[0_0_35px_rgba(0,71,255,0.6)] hover:scale-[1.02] transition-all"
+              className="w-full sm:w-auto bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-base px-8 py-6 rounded-full border border-blue-400/40 shadow-[0_0_25px_rgba(0,71,255,0.4)] hover:shadow-[0_0_35px_rgba(0,71,255,0.6)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              <a href="#contact" className="flex items-center justify-center gap-2">
-                <span>Build With Us</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
+              <span>Build With Us</span>
+              <ArrowRight className="w-4 h-4" />
             </Button>
 
             <Button

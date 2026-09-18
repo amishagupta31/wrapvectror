@@ -59,7 +59,7 @@ export function WorkSection() {
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
-            Built For Real Problems.
+            Built For Real Problems
           </h2>
 
           <p className="mt-5 text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">

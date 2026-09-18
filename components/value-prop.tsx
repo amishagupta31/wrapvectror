@@ -60,7 +60,7 @@ export function ValueProposition() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Technology Should Work For You.
+            Technology Should Work For You
           </h2>
 
           <p className="mt-6 text-base sm:text-lg text-zinc-400 leading-relaxed">
