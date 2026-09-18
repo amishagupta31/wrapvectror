@@ -20,25 +20,26 @@ export function WhyUsSection() {
   ]
 
   return (
-    <section id="why-us" className="relative py-28 sm:py-36 overflow-hidden bg-black/60">
+    <section id="about" className="relative py-28 sm:py-36 overflow-hidden bg-black/60 scroll-mt-20">
+      <span id="why-us" className="absolute -top-24" />
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
+            <Cpu className="w-3.5 h-3.5 text-blue-400" />
             <span>The Paradigm Shift</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
             We Don't Just Ship Features. <br className="hidden sm:inline" />
-            <span className="text-gradient-cyan">We Engineer Systems.</span>
+            <span className="text-[#0047FF]">We Engineer Systems.</span>
           </h2>
 
           <div className="mt-8 p-6 rounded-2xl bg-white/[0.02] border border-white/10 max-w-2xl mx-auto">
             <p className="text-lg sm:text-xl font-bold text-white leading-relaxed">
               "The goal isn't to add more technology. <br />
-              <span className="text-cyan-400">It's to make technology do more."</span>
+              <span className="text-blue-400">It's to make technology do more."</span>
             </p>
           </div>
         </div>
@@ -78,27 +79,24 @@ export function WhyUsSection() {
           </div>
 
           {/* Our AI-First Approach Card */}
-          <div className="relative rounded-3xl p-8 sm:p-10 bg-zinc-950/90 border border-cyan-500/40 shadow-[0_0_50px_rgba(6,182,212,0.15)] backdrop-blur-2xl flex flex-col justify-between group">
-            {/* Subtle Gradient Accent */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-3xl pointer-events-none" />
-
+          <div className="relative rounded-3xl p-8 sm:p-10 bg-zinc-950/90 border border-blue-500/40 shadow-[0_0_50px_rgba(0,71,255,0.15)] backdrop-blur-2xl flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-6">
                 <div>
-                  <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-widest block">AI-First Architecture</span>
+                  <span className="text-[11px] font-mono text-blue-400 uppercase tracking-widest block">AI-First Architecture</span>
                   <h3 className="text-2xl font-bold text-white mt-1">Our Engineering Approach</h3>
                 </div>
-                <div className="w-10 h-10 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-cyan-400" />
+                <div className="w-10 h-10 rounded-2xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-blue-400" />
                 </div>
               </div>
 
               <div className="space-y-5">
                 {ourApproach.map((item) => (
                   <div key={item.title} className="flex items-start gap-3.5">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-1" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0 mt-1" />
                     <div>
-                      <h4 className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">{item.title}</h4>
+                      <h4 className="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors">{item.title}</h4>
                       <p className="text-xs text-zinc-300 mt-0.5 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
@@ -106,7 +104,7 @@ export function WhyUsSection() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-cyan-500/20 flex items-center justify-between text-xs font-mono text-cyan-300">
+            <div className="mt-8 pt-6 border-t border-blue-500/20 flex items-center justify-between text-xs font-mono text-blue-300">
               <span>Result: Exponential leverage, sub-second execution, compounding scale.</span>
             </div>
           </div>

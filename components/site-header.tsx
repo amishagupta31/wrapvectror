@@ -12,57 +12,64 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      const scrollPos =
+        window.scrollY ||
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      setScrolled(scrollPos > 20)
     }
+
     handleScroll()
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   const navLinks = [
-    { href: "#services", label: "What We Build" },
-    { href: "#agents", label: "AI Agents" },
-    { href: "#automation", label: "Automation" },
-    { href: "#why-us", label: "Systems vs Features" },
-    { href: "#process", label: "Process" },
-    { href: "#technology", label: "Tech Stack" },
-    { href: "#work", label: "Work" },
+    { href: "#services", label: "Services" },
+    { href: "#about", label: "About Us" },
+    { href: "#work", label: "Our Work" },
+    { href: "#tech", label: "Tech" },
+    { href: "#team", label: "Team" },
   ]
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ease-in-out pointer-events-none ${
-        scrolled ? "px-3 sm:px-6 pt-3 sm:pt-4" : "px-0 pt-0"
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ease-in-out ${
+        scrolled
+          ? "pt-3 sm:pt-4 px-3 sm:px-6 pointer-events-none"
+          : "pt-0 px-0 pointer-events-auto"
       }`}
     >
       <div
         className={`w-full transition-all duration-300 ease-in-out pointer-events-auto ${
-          scrolled ? "max-w-6xl mx-auto" : "max-w-full"
+          scrolled ? "container mx-auto max-w-7xl" : "max-w-full"
         }`}
       >
         <div
           className={`flex items-center justify-between transition-all duration-300 ease-in-out ${
             scrolled
-              ? "h-14 sm:h-16 px-4 sm:px-6 rounded-full liquid-glass-enhanced bg-black/85 shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/15"
+              ? "h-14 sm:h-16 px-4 sm:px-7 rounded-full liquid-glass-enhanced bg-black/80 shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/15"
               : "h-16 sm:h-20 px-4 sm:px-8 lg:px-12 rounded-none border-b border-white/10 bg-black/60 backdrop-blur-xl"
           }`}
         >
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-transparent border border-cyan-500/30 group-hover:border-cyan-400/60 transition-all duration-300 p-1.5 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-3.5 group flex-shrink-0">
+            <div className="relative flex items-center justify-center w-11 h-10 sm:w-12 sm:h-11 rounded-xl bg-blue-500/15 border border-blue-500/40 group-hover:border-blue-400/80 transition-all duration-300 p-1 flex-shrink-0 shadow-[0_0_15px_rgba(0,71,255,0.25)]">
               <Image
                 src="/images/agency-logo.png"
-                alt="Agency Logo"
-                width={32}
+                alt="WrapVector Logo"
+                width={48}
                 height={32}
-                className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.6)] group-hover:scale-110 transition-transform duration-300"
+                className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(0,71,255,0.8)] group-hover:scale-105 transition-transform duration-300"
                 priority
               />
-              <div className="absolute inset-0 rounded-xl bg-cyan-400/10 blur-sm group-hover:bg-cyan-400/20 transition-all" />
+              <div className="absolute inset-0 rounded-xl bg-blue-500/10 blur-sm group-hover:bg-blue-500/25 transition-all" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold tracking-tight text-white text-base sm:text-lg flex items-center gap-1 whitespace-nowrap">
-                WRAP<span className="text-cyan-400">VECTOR</span>
+              <span className="font-extrabold tracking-tight text-white text-lg sm:text-xl flex items-center gap-1 whitespace-nowrap">
+                WRAP<span className="text-[#0047FF]">VECTOR</span>
               </span>
             </div>
           </Link>
@@ -73,26 +80,18 @@ export function SiteHeader() {
               <a
                 key={link.href}
                 href={link.href}
-                className="hover:text-cyan-300 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-cyan-400 hover:after:w-full after:transition-all after:duration-200"
+                className="hover:text-blue-400 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-[#0047FF] hover:after:w-full after:transition-all after:duration-200"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right Status + CTA */}
+          {/* Right CTA */}
           <div className="hidden sm:flex items-center gap-3 xl:gap-4 flex-shrink-0">
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] text-zinc-300 whitespace-nowrap">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-              </span>
-              <span>Available for Q2/Q3 Build Sprints</span>
-            </div>
-
             <Button
               asChild
-              className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-cyan-400/30 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_28px_rgba(6,182,212,0.5)] hover:scale-[1.02] transition-all whitespace-nowrap"
+              className="relative overflow-hidden group bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-blue-400/40 shadow-[0_0_20px_rgba(0,71,255,0.4)] hover:shadow-[0_0_28px_rgba(0,71,255,0.6)] hover:scale-[1.02] transition-all whitespace-nowrap"
             >
               <a href="#contact" className="flex items-center gap-1.5">
                 <span>Build With Us</span>
@@ -106,7 +105,7 @@ export function SiteHeader() {
             <Button
               asChild
               size="sm"
-              className="sm:hidden bg-cyan-500 text-black font-semibold text-xs px-3 py-1.5 rounded-full hover:bg-cyan-400"
+              className="sm:hidden bg-[#0047FF] text-white font-semibold text-xs px-3.5 py-1.5 rounded-full hover:bg-[#0038e0]"
             >
               <a href="#contact">Build →</a>
             </Button>
@@ -124,17 +123,17 @@ export function SiteHeader() {
               </SheetTrigger>
               <SheetContent side="right" className="bg-zinc-950/95 border-l border-white/10 p-6 flex flex-col justify-between w-72 sm:w-80 backdrop-blur-2xl">
                 <div>
-                  <div className="flex items-center gap-3 pb-6 border-b border-white/10 mb-6">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center p-1.5">
+                  <div className="flex items-center gap-3.5 pb-6 border-b border-white/10 mb-6">
+                    <div className="w-12 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center p-1 shadow-[0_0_12px_rgba(0,71,255,0.3)]">
                       <Image
                         src="/images/agency-logo.png"
-                        alt="Agency Logo"
-                        width={32}
-                        height={32}
-                        className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]"
+                        alt="WrapVector Logo"
+                        width={44}
+                        height={28}
+                        className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,71,255,0.8)]"
                       />
                     </div>
-                    <span className="font-bold text-white text-lg">WRAP<span className="text-cyan-400">VECTOR</span></span>
+                    <span className="font-extrabold text-white text-xl">WRAP<span className="text-[#0047FF]">VECTOR</span></span>
                   </div>
 
                   <nav className="flex flex-col gap-2">
@@ -142,24 +141,17 @@ export function SiteHeader() {
                       <a
                         key={link.href}
                         href={link.href}
-                        className="flex items-center justify-between p-3 rounded-xl text-zinc-200 hover:text-cyan-400 hover:bg-white/5 transition-all text-sm font-medium"
+                        className="flex items-center justify-between p-3 rounded-xl text-zinc-200 hover:text-blue-400 hover:bg-white/5 transition-all text-sm font-medium"
                       >
                         <span>{link.label}</span>
                         <ArrowUpRight className="w-3.5 h-3.5 opacity-50" />
                       </a>
                     ))}
-                    <a
-                      href="#contact"
-                      className="flex items-center justify-between p-3 rounded-xl text-zinc-200 hover:text-cyan-400 hover:bg-white/5 transition-all text-sm font-medium"
-                    >
-                      <span>Contact</span>
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-50" />
-                    </a>
                   </nav>
                 </div>
 
                 <div className="pt-6 border-t border-white/10">
-                  <Button asChild className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 rounded-xl shadow-lg shadow-cyan-500/20">
+                  <Button asChild className="w-full bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold py-3 rounded-xl shadow-lg shadow-blue-600/30">
                     <a href="#contact">Build With Us →</a>
                   </Button>
                 </div>
@@ -171,4 +163,3 @@ export function SiteHeader() {
     </header>
   )
 }
-

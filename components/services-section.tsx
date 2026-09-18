@@ -127,8 +127,8 @@ export function ServicesSection() {
         
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Cpu className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
+            <Cpu className="w-3.5 h-3.5 text-blue-400" />
             <span>Our Capabilities</span>
           </div>
 
@@ -146,24 +146,21 @@ export function ServicesSection() {
           {services.map((service) => (
             <div
               key={service.number}
-              className="relative rounded-3xl p-7 bg-zinc-950/70 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 backdrop-blur-xl group hover:shadow-[0_10px_40px_rgba(6,182,212,0.12)] flex flex-col justify-between overflow-hidden"
+              className="relative rounded-3xl p-7 bg-zinc-950/70 border border-white/10 hover:border-blue-500/40 transition-all duration-300 backdrop-blur-xl group hover:shadow-[0_10px_40px_rgba(0,71,255,0.15)] flex flex-col justify-between overflow-hidden"
             >
-              {/* Subtle Card Glow Header */}
-              <div className={`absolute top-0 right-0 w-48 h-48 bg-gradient-to-br ${service.glow} blur-3xl pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity`} />
-
               <div>
                 {/* Number & Icon */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono font-bold tracking-widest text-cyan-400 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                  <span className="text-xs font-mono font-bold tracking-widest text-blue-400 px-3 py-1 rounded-full bg-white/5 border border-white/10">
                     {service.number}
                   </span>
-                  <div className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-cyan-400/50 group-hover:bg-cyan-500/10 transition-all duration-300">
-                    <service.icon className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
+                  <div className="w-11 h-11 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-blue-400/50 group-hover:bg-blue-500/10 transition-all duration-300">
+                    <service.icon className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" />
                   </div>
                 </div>
 
                 {/* Title & Tagline */}
-                <h3 className="text-2xl font-bold text-white tracking-tight mb-2 group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-2xl font-bold text-white tracking-tight mb-2 group-hover:text-blue-300 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-sm font-semibold text-zinc-300 mb-4 leading-snug">
@@ -177,7 +174,7 @@ export function ServicesSection() {
 
                 {/* Process Step for Service 06 */}
                 {service.isProcessPillar && (
-                  <div className="mb-6 p-3 rounded-xl bg-cyan-500/[0.06] border border-cyan-500/20 text-[11px] font-mono text-cyan-300">
+                  <div className="mb-6 p-3 rounded-xl bg-blue-500/[0.06] border border-blue-500/20 text-[11px] font-mono text-blue-300">
                     Strategy → UX/UI → Dev → AI → Testing → Deployment → Scale
                   </div>
                 )}
@@ -186,7 +183,7 @@ export function ServicesSection() {
                 <div className="space-y-2 mb-8 pt-4 border-t border-white/5">
                   {service.examples.map((item) => (
                     <div key={item} className="flex items-center gap-2 text-xs text-zinc-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-cyan-400/80 shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -197,7 +194,7 @@ export function ServicesSection() {
               <div className="pt-4 border-t border-white/10">
                 <a
                   href={service.ctaHref}
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300 group-hover:translate-x-1 transition-all"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-blue-400 hover:text-blue-300 group-hover:translate-x-1 transition-all"
                 >
                   <span>{service.ctaText}</span>
                   <ArrowRight className="w-4 h-4" />

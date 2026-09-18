@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Bot, ArrowRight, Play, CheckCircle2, Sparkles, Terminal, RefreshCw, Cpu, Layers, Database, Bell } from "lucide-react"
+import { Bot, ArrowRight, Play, CheckCircle2, Sparkles, Terminal, Cpu, Database, Bell } from "lucide-react"
 
 export function AgentShowcase() {
   const [selectedScenario, setSelectedScenario] = useState<number>(0)
@@ -72,16 +72,16 @@ export function AgentShowcase() {
   }
 
   return (
-    <section id="agents" className="relative py-28 sm:py-36 overflow-hidden">
+    <section id="agents" className="relative py-28 sm:py-36 overflow-hidden bg-black text-white">
       {/* Background Accent Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Bot className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
+            <Bot className="w-3.5 h-3.5 text-blue-400" />
             <span>Autonomous Intelligence</span>
           </div>
 
@@ -105,7 +105,7 @@ export function AgentShowcase() {
               }}
               className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 selectedScenario === index
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-[0_0_25px_rgba(6,182,212,0.4)] border border-cyan-400/40"
+                  ? "bg-[#0047FF] text-white shadow-[0_0_20px_rgba(0,71,255,0.4)] border border-blue-400/40"
                   : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/10"
               }`}
             >
@@ -115,7 +115,7 @@ export function AgentShowcase() {
         </div>
 
         {/* Visualization Card */}
-        <div className="relative rounded-3xl p-1 bg-gradient-to-b from-cyan-500/30 via-white/10 to-transparent border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
+        <div className="relative rounded-3xl p-1 bg-zinc-900 border border-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.8)] backdrop-blur-2xl">
           <div className="rounded-[22px] bg-zinc-950/90 p-6 sm:p-10">
             
             {/* Top Bar of Visualizer */}
@@ -123,7 +123,7 @@ export function AgentShowcase() {
               <div>
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-xs font-mono text-cyan-400 font-bold uppercase">{current.agent}</span>
+                  <span className="text-xs font-mono text-blue-400 font-bold uppercase">{current.agent}</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
                   {current.prompt}
@@ -133,9 +133,9 @@ export function AgentShowcase() {
               <Button
                 onClick={handleRunSimulation}
                 disabled={isSimulating}
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-full px-5 py-2 text-xs font-mono flex items-center gap-2"
+                className="bg-zinc-900 hover:bg-zinc-800 text-white border border-white/20 rounded-full px-5 py-2 text-xs font-mono flex items-center gap-2"
               >
-                <Play className={`w-3.5 h-3.5 text-cyan-400 ${isSimulating ? "animate-spin" : ""}`} />
+                <Play className={`w-3.5 h-3.5 text-blue-400 ${isSimulating ? "animate-spin" : ""}`} />
                 <span>{isSimulating ? "Executing Flow..." : "Replay Agent Flow"}</span>
               </Button>
             </div>
@@ -151,7 +151,7 @@ export function AgentShowcase() {
                     key={step.label}
                     className={`relative rounded-2xl p-4.5 border transition-all duration-300 flex flex-col justify-between ${
                       isCurrent
-                        ? "bg-cyan-500/[0.12] border-cyan-400 shadow-[0_0_25px_rgba(6,182,212,0.3)] scale-[1.03]"
+                        ? "bg-[#0047FF]/15 border-blue-400 shadow-[0_0_20px_rgba(0,71,255,0.3)] scale-[1.03]"
                         : isActive
                         ? "bg-white/[0.04] border-white/20 text-white"
                         : "bg-white/[0.01] border-white/5 opacity-50"
@@ -159,10 +159,10 @@ export function AgentShowcase() {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-cyan-300 font-bold">
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/10 text-blue-300 font-bold">
                           STEP 0{idx + 1}
                         </span>
-                        <step.icon className={`w-4 h-4 ${isActive ? "text-cyan-400" : "text-zinc-600"}`} />
+                        <step.icon className={`w-4 h-4 ${isActive ? "text-blue-400" : "text-zinc-600"}`} />
                       </div>
                       <h4 className="text-xs font-bold text-white mb-1.5">{step.label}</h4>
                       <p className="text-[11px] text-zinc-400 leading-relaxed font-mono">{step.detail}</p>
@@ -185,13 +185,13 @@ export function AgentShowcase() {
             {/* Agent Telemetry Output Box */}
             <div className="mt-8 p-4 rounded-xl bg-black/60 border border-white/10 font-mono text-xs text-zinc-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
               <div className="flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-cyan-400" />
+                <Terminal className="w-4 h-4 text-blue-400" />
                 <span>
                   Execution Protocol: <strong className="text-white">User Request → AI Agent → Reasoning → Tools → Actions → Result</strong>
                 </span>
               </div>
               <div className="text-[11px] text-zinc-400">
-                Avg. Total Execution: <span className="text-cyan-400 font-bold">1.24s</span>
+                Avg. Total Execution: <span className="text-blue-400 font-bold">1.24s</span>
               </div>
             </div>
 
@@ -200,7 +200,7 @@ export function AgentShowcase() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-sm px-8 py-6 rounded-full border border-cyan-400/40 shadow-[0_0_30px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(6,182,212,0.5)] transition-all"
+                className="bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-sm px-8 py-6 rounded-full border border-blue-400/40 shadow-[0_0_25px_rgba(0,71,255,0.4)] hover:shadow-[0_0_35px_rgba(0,71,255,0.6)] transition-all"
               >
                 <a href="#contact" className="flex items-center gap-2">
                   <span>Build Your AI Workforce</span>

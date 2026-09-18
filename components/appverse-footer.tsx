@@ -2,153 +2,73 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Cpu, ArrowUpRight, Github, Twitter, Linkedin, Instagram, Sparkles } from "lucide-react"
+import { ArrowUpRight, Linkedin, Instagram, Github, Twitter } from "lucide-react"
 
 export function AppverseFooter() {
-  const links = {
-    company: [
-      { label: "About", href: "#why-us" },
-      { label: "Services", href: "#services" },
-      { label: "Case Studies", href: "#work" },
-      { label: "Careers", href: "#contact" },
-      { label: "Contact", href: "#contact" },
-    ],
-    solutions: [
-      { label: "AI Agents", href: "#agents" },
-      { label: "AI Automation", href: "#automation" },
-      { label: "Software Development", href: "#services" },
-      { label: "AI Integration", href: "#services" },
-      { label: "Product Engineering", href: "#services" },
-    ],
-    resources: [
-      { label: "Architecture Blog", href: "#technology" },
-      { label: "Agent Insights", href: "#agents" },
-      { label: "Automation Guides", href: "#automation" },
-      { label: "Case Studies", href: "#work" },
-    ],
-    social: [
-      { label: "LinkedIn", href: "https://linkedin.com" },
-      { label: "GitHub", href: "https://github.com" },
-      { label: "X (Twitter)", href: "https://x.com" },
-      { label: "Instagram", href: "https://instagram.com" },
-    ],
-  }
+  const socials = [
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/wrapvector/", icon: Linkedin },
+    { label: "Instagram", href: "https://www.instagram.com/wrapvector/", icon: Instagram },
+    { label: "GitHub", href: "https://github.com", icon: Github },
+    { label: "X (Twitter)", href: "https://x.com", icon: Twitter },
+  ]
 
   return (
-    <footer className="relative border-t border-white/10 bg-black pt-20 pb-12 overflow-hidden">
+    <footer className="relative border-t border-white/10 bg-black py-10 overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        
-        {/* Top Footer Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 pb-16 border-b border-white/10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-white/10">
           
-          {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center p-1.5">
+          {/* Left: Brand Logo & Tagline */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="w-12 h-10 rounded-xl bg-blue-500/20 border border-blue-500/40 flex items-center justify-center p-1 shadow-[0_0_12px_rgba(0,71,255,0.3)]">
                 <Image
                   src="/images/agency-logo.png"
-                  alt="Agency Logo"
-                  width={28}
+                  alt="WrapVector Logo"
+                  width={44}
                   height={28}
-                  className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.6)]"
+                  className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,71,255,0.8)]"
                 />
               </div>
-              <span className="font-bold text-white text-lg tracking-tight">
-                WRAP<span className="text-cyan-400">VECTOR</span>
+              <span className="font-extrabold text-white text-xl tracking-tight">
+                WRAP<span className="text-[#0047FF]">VECTOR</span>
               </span>
             </Link>
 
-            <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
-              Building intelligent technology for businesses that refuse to stand still.
-            </p>
-
-            <div className="pt-2 flex items-center gap-2 text-xs font-mono text-cyan-300">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Systems Online • Edge Mesh 99.99% Uptime</span>
+            <div className="sm:border-l sm:border-white/10 sm:pl-4 sm:ml-1 flex flex-col justify-center">
+              <p className="text-xs text-zinc-400">
+                Building intelligent AI systems & scalable digital products.
+              </p>
             </div>
           </div>
 
-          {/* Company Links */}
-          <div>
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300 mb-4">
-              Company
-            </h4>
-            <ul className="space-y-2.5 text-xs text-zinc-400">
-              {links.company.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-cyan-300 transition-colors">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Solutions Links */}
-          <div>
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300 mb-4">
-              Solutions
-            </h4>
-            <ul className="space-y-2.5 text-xs text-zinc-400">
-              {links.solutions.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-cyan-300 transition-colors">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div>
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300 mb-4">
-              Resources
-            </h4>
-            <ul className="space-y-2.5 text-xs text-zinc-400">
-              {links.resources.map((item) => (
-                <li key={item.label}>
-                  <a href={item.href} className="hover:text-cyan-300 transition-colors">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-300 mb-4">
-              Social
-            </h4>
-            <ul className="space-y-2.5 text-xs text-zinc-400">
-              {links.social.map((item) => (
-                <li key={item.label}>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 hover:text-cyan-300 transition-colors"
-                  >
-                    <span>{item.label}</span>
-                    <ArrowUpRight className="w-3 h-3 opacity-60" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Right: Social Links */}
+          <div className="flex items-center flex-wrap justify-center gap-2.5 sm:gap-3">
+            {socials.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/40 text-xs text-zinc-300 hover:text-white transition-all group"
+              >
+                <item.icon className="w-3.5 h-3.5 text-blue-400 group-hover:scale-110 transition-transform" />
+                <span>{item.label}</span>
+                <ArrowUpRight className="w-3 h-3 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              </a>
+            ))}
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+        {/* Bottom Bar: Copyright & Terms */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500 font-mono">
           <div>
             © {new Date().getFullYear()} WrapVector Systems Inc. All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-zinc-300 transition-colors cursor-pointer">Privacy Architecture</span>
-            <span className="hover:text-zinc-300 transition-colors cursor-pointer">Security Protocol</span>
-            <span className="hover:text-zinc-300 transition-colors cursor-pointer">Terms of Service</span>
+          <div className="flex items-center gap-5 text-xs text-zinc-400">
+            <span className="hover:text-zinc-200 transition-colors cursor-pointer">Privacy</span>
+            <span className="hover:text-zinc-200 transition-colors cursor-pointer">Security</span>
+            <span className="hover:text-zinc-200 transition-colors cursor-pointer">Terms</span>
           </div>
         </div>
 

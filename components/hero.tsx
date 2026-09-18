@@ -18,9 +18,8 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[92vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-radial-gradient">
-      {/* Subtle Background Glow Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background Accent */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none" />
 
       {/* Grid Pattern Overlay */}
       <div 
@@ -35,28 +34,28 @@ export function Hero() {
         <div className="flex flex-col items-center text-center">
           
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-cyan-500/30 backdrop-blur-md mb-8 animate-fade-in shadow-[0_0_20px_rgba(6,182,212,0.2)]">
-            <div className="w-4 h-4 relative shrink-0">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 backdrop-blur-md mb-8 animate-fade-in shadow-[0_0_20px_rgba(0,71,255,0.2)]">
+            <div className="w-6 h-4 relative shrink-0">
               <Image
                 src="/images/agency-logo.png"
-                alt="Logo"
-                width={16}
+                alt="WrapVector Logo"
+                width={24}
                 height={16}
-                className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(6,182,212,0.8)]"
+                className="w-full h-full object-contain filter drop-shadow-[0_0_6px_rgba(0,71,255,0.8)]"
               />
             </div>
-            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] text-cyan-300 uppercase">
+            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.2em] text-blue-300 uppercase">
               AI • AUTOMATION • SOFTWARE • DIGITAL PRODUCTS
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.05] max-w-5xl">
-            <span className="block text-gradient-silver">Build Smarter.</span>
-            <span className="block text-gradient-cyan drop-shadow-[0_0_40px_rgba(56,189,248,0.35)]">
+            <span className="block text-white">Build Smarter.</span>
+            <span className="block text-[#0047FF]">
               Automate Everything.
             </span>
-            <span className="block text-gradient-silver">Scale Faster.</span>
+            <span className="block text-zinc-300">Scale Faster.</span>
           </h1>
 
           {/* Supporting Headline */}
@@ -69,7 +68,7 @@ export function Hero() {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-base px-8 py-6 rounded-full border border-cyan-400/40 shadow-[0_0_30px_rgba(6,182,212,0.35)] hover:shadow-[0_0_40px_rgba(6,182,212,0.55)] hover:scale-[1.02] transition-all"
+              className="w-full sm:w-auto bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-base px-8 py-6 rounded-full border border-blue-400/40 shadow-[0_0_25px_rgba(0,71,255,0.4)] hover:shadow-[0_0_35px_rgba(0,71,255,0.6)] hover:scale-[1.02] transition-all"
             >
               <a href="#contact" className="flex items-center justify-center gap-2">
                 <span>Build With Us</span>
@@ -81,7 +80,7 @@ export function Hero() {
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto bg-white/[0.03] hover:bg-white/[0.08] text-zinc-200 hover:text-white border-white/15 px-8 py-6 rounded-full text-base backdrop-blur-md transition-all"
+              className="w-full sm:w-auto bg-zinc-900 hover:bg-zinc-800 text-zinc-100 hover:text-white border-white/15 px-8 py-6 rounded-full text-base transition-all"
             >
               <a href="#work" className="flex items-center justify-center gap-2">
                 <span>Explore Our Work</span>
@@ -97,7 +96,7 @@ export function Hero() {
 
           {/* Hero Visual: Premium AI & System Architecture Interface */}
           <div className="mt-14 w-full max-w-5xl">
-            <div className="relative rounded-3xl p-1 bg-gradient-to-b from-white/20 via-white/5 to-transparent border border-white/10 shadow-[0_20px_70px_rgba(0,0,0,0.8)]">
+            <div className="relative rounded-3xl p-1 bg-zinc-900 border border-white/10 shadow-[0_20px_70px_rgba(0,0,0,0.8)]">
               <div className="rounded-[22px] bg-zinc-950/90 border border-white/10 backdrop-blur-2xl overflow-hidden">
                 
                 {/* Console Header Bar */}
@@ -110,7 +109,7 @@ export function Hero() {
                     </div>
                     <div className="h-4 w-px bg-white/10 mx-1" />
                     <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-                      <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                      <Terminal className="w-3.5 h-3.5 text-blue-400" />
                       system.core.orchestration_v4.2
                     </span>
                   </div>
@@ -121,7 +120,7 @@ export function Hero() {
                       onClick={() => setActiveTab("orchestrator")}
                       className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                         activeTab === "orchestrator"
-                          ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                          ? "bg-blue-500/20 text-blue-300 border border-blue-500/30"
                           : "text-zinc-400 hover:text-zinc-200"
                       }`}
                     >
@@ -131,7 +130,7 @@ export function Hero() {
                       onClick={() => setActiveTab("workflow")}
                       className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                         activeTab === "workflow"
-                          ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                          ? "bg-blue-500/20 text-blue-300 border border-blue-500/30"
                           : "text-zinc-400 hover:text-zinc-200"
                       }`}
                     >
@@ -141,7 +140,7 @@ export function Hero() {
                       onClick={() => setActiveTab("neural")}
                       className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
                         activeTab === "neural"
-                          ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/30"
+                          ? "bg-blue-500/20 text-blue-300 border border-blue-500/30"
                           : "text-zinc-400 hover:text-zinc-200"
                       }`}
                     >
@@ -155,10 +154,10 @@ export function Hero() {
                   {activeTab === "orchestrator" && (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {/* Node 1 */}
-                      <div className="p-4 rounded-2xl bg-white/[0.02] border border-cyan-500/30 hover:border-cyan-400/60 transition-all group">
+                      <div className="p-4 rounded-2xl bg-white/[0.02] border border-blue-500/30 hover:border-blue-400/60 transition-all group">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-2">
-                            <Bot className="w-4 h-4 text-cyan-400" />
+                            <Bot className="w-4 h-4 text-blue-400" />
                             <span className="text-xs font-semibold text-white">Lead Intelligence Agent</span>
                           </div>
                           <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
@@ -170,7 +169,7 @@ export function Hero() {
                         </p>
                         <div className="flex items-center justify-between pt-3 border-t border-white/5 text-[11px] font-mono text-zinc-400">
                           <span>Latency: 420ms</span>
-                          <span className="text-cyan-400">99.8% Success</span>
+                          <span className="text-blue-400">99.8% Success</span>
                         </div>
                       </div>
 
@@ -195,13 +194,13 @@ export function Hero() {
                       </div>
 
                       {/* Node 3 */}
-                      <div className="p-4 rounded-2xl bg-white/[0.02] border border-indigo-500/30 hover:border-indigo-400/60 transition-all group">
+                      <div className="p-4 rounded-2xl bg-white/[0.02] border border-blue-500/30 hover:border-blue-400/60 transition-all group">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-2">
-                            <Cpu className="w-4 h-4 text-indigo-400" />
+                            <Cpu className="w-4 h-4 text-blue-400" />
                             <span className="text-xs font-semibold text-white">Customer Support Agent</span>
                           </div>
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
                             Live
                           </span>
                         </div>
@@ -210,7 +209,7 @@ export function Hero() {
                         </p>
                         <div className="flex items-center justify-between pt-3 border-t border-white/5 text-[11px] font-mono text-zinc-400">
                           <span>Resolution: 92%</span>
-                          <span className="text-indigo-400">&lt; 3.1s Response</span>
+                          <span className="text-blue-400">&lt; 3.1s Response</span>
                         </div>
                       </div>
                     </div>
@@ -220,7 +219,7 @@ export function Hero() {
                     <div className="space-y-3 font-mono text-xs">
                       <div className="p-3.5 rounded-xl bg-black/60 border border-white/10 flex items-center justify-between text-zinc-300">
                         <div className="flex items-center gap-3">
-                          <span className="text-cyan-400">[01] Inbound Webhook</span>
+                          <span className="text-blue-400">[01] Inbound Webhook</span>
                           <span className="text-zinc-500">→</span>
                           <span>Payload Validated & Normalized</span>
                         </div>
@@ -236,7 +235,7 @@ export function Hero() {
                       </div>
                       <div className="p-3.5 rounded-xl bg-black/60 border border-white/10 flex items-center justify-between text-zinc-300">
                         <div className="flex items-center gap-3">
-                          <span className="text-indigo-400">[03] Database & External API Sync</span>
+                          <span className="text-blue-400">[03] Database & External API Sync</span>
                           <span className="text-zinc-500">→</span>
                           <span>HubSpot, Slack & PostgreSQL Update</span>
                         </div>
@@ -254,7 +253,7 @@ export function Hero() {
                       </div>
                       <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
                         <div className="text-[11px] font-mono text-zinc-400 mb-1">Average Response</div>
-                        <div className="text-xl font-bold text-cyan-400 font-mono">380ms</div>
+                        <div className="text-xl font-bold text-blue-400 font-mono">380ms</div>
                         <div className="text-[10px] text-zinc-400 mt-1">Streaming TTFT</div>
                       </div>
                       <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
@@ -264,7 +263,7 @@ export function Hero() {
                       </div>
                       <div className="p-4 rounded-xl bg-white/[0.02] border border-white/10">
                         <div className="text-[11px] font-mono text-zinc-400 mb-1">Agent Tasks Executed</div>
-                        <div className="text-xl font-bold text-indigo-400 font-mono">4.8M+</div>
+                        <div className="text-xl font-bold text-blue-400 font-mono">4.8M+</div>
                         <div className="text-[10px] text-emerald-400 mt-1">Zero manual touch</div>
                       </div>
                     </div>
@@ -273,7 +272,7 @@ export function Hero() {
                   {/* Terminal Status Footer */}
                   <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between text-[11px] font-mono text-zinc-400 gap-2">
                     <div className="flex items-center gap-2">
-                      <Activity className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+                      <Activity className="w-3.5 h-3.5 text-blue-400 animate-pulse" />
                       <span>Cluster Status: Operational (Region: us-east-1 / Edge Mesh)</span>
                     </div>
                     <div className="text-zinc-500">

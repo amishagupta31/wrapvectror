@@ -75,8 +75,8 @@ export function ProcessSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Compass className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
+            <Compass className="w-3.5 h-3.5 text-blue-400" />
             <span>Methodology</span>
           </div>
 
@@ -92,7 +92,7 @@ export function ProcessSection() {
         {/* 5-Step Process Visualizer with Connecting Line */}
         <div className="relative mb-14 hidden lg:block">
           {/* Connecting Line */}
-          <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-gradient-to-r from-cyan-500/20 via-blue-500/40 to-indigo-500/20 -translate-y-1/2 z-0" />
+          <div className="absolute top-1/2 left-8 right-8 h-0.5 bg-blue-500/30 -translate-y-1/2 z-0" />
           
           <div className="grid grid-cols-5 gap-4 relative z-10">
             {steps.map((step, idx) => (
@@ -101,20 +101,20 @@ export function ProcessSection() {
                 onClick={() => setActiveStep(idx)}
                 className={`flex flex-col items-center p-4 rounded-2xl transition-all duration-300 ${
                   activeStep === idx
-                    ? "bg-zinc-900 border border-cyan-400 shadow-[0_0_30px_rgba(6,182,212,0.3)] scale-105"
+                    ? "bg-zinc-900 border border-blue-400 shadow-[0_0_25px_rgba(0,71,255,0.3)] scale-105"
                     : "bg-zinc-950/80 border border-white/10 hover:border-white/20"
                 }`}
               >
                 <div
                   className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-3 font-mono font-bold text-sm transition-all ${
                     activeStep === idx
-                      ? "bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/40"
+                      ? "bg-[#0047FF] text-white shadow-lg shadow-blue-500/30"
                       : "bg-white/5 text-zinc-400 border border-white/10"
                   }`}
                 >
                   <step.icon className="w-5 h-5" />
                 </div>
-                <span className="text-xs font-mono font-bold text-cyan-400 mb-0.5">{step.number}</span>
+                <span className="text-xs font-mono font-bold text-blue-400 mb-0.5">{step.number}</span>
                 <span className="text-sm font-bold text-white">{step.name}</span>
               </button>
             ))}
@@ -122,13 +122,13 @@ export function ProcessSection() {
         </div>
 
         {/* Active Step Details Spotlight */}
-        <div className="rounded-3xl p-8 sm:p-12 bg-zinc-950/90 border border-cyan-500/30 shadow-[0_15px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl">
+        <div className="rounded-3xl p-8 sm:p-12 bg-zinc-950/90 border border-blue-500/30 shadow-[0_15px_60px_rgba(0,0,0,0.7)] backdrop-blur-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Column: Number, Title, Description */}
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
                   STEP {steps[activeStep].number} — {steps[activeStep].name.toUpperCase()}
                 </span>
               </div>
@@ -144,7 +144,7 @@ export function ProcessSection() {
               <div className="space-y-3">
                 {steps[activeStep].details.map((detail) => (
                   <div key={detail} className="flex items-center gap-3 text-sm text-zinc-200">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>{detail}</span>
                   </div>
                 ))}
@@ -159,15 +159,15 @@ export function ProcessSection() {
                   onClick={() => setActiveStep(idx)}
                   className={`flex items-center justify-between p-4 rounded-xl border text-left transition-all ${
                     activeStep === idx
-                      ? "bg-cyan-500/[0.1] border-cyan-400/60 text-white"
+                      ? "bg-blue-500/[0.1] border-blue-400/60 text-white"
                       : "bg-white/[0.02] border-white/5 text-zinc-400 hover:text-zinc-200 hover:bg-white/[0.05]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono font-bold text-cyan-400">{step.number}</span>
+                    <span className="text-xs font-mono font-bold text-blue-400">{step.number}</span>
                     <span className="text-sm font-semibold">{step.name} — {step.title}</span>
                   </div>
-                  <ArrowRight className={`w-4 h-4 ${activeStep === idx ? "text-cyan-400" : "opacity-30"}`} />
+                  <ArrowRight className={`w-4 h-4 ${activeStep === idx ? "text-blue-400" : "opacity-30"}`} />
                 </button>
               ))}
             </div>

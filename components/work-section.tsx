@@ -46,13 +46,15 @@ export function WorkSection() {
   ]
 
   return (
-    <section id="work" className="relative py-28 sm:py-36 overflow-hidden">
+    <section id="work" className="relative py-28 sm:py-36 overflow-hidden scroll-mt-20">
+      <span id="ourwork" className="absolute -top-24" />
+      <span id="our-work" className="absolute -top-24" />
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Layers className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
+            <Layers className="w-3.5 h-3.5 text-blue-400" />
             <span>Featured Case Studies</span>
           </div>
 
@@ -70,19 +72,19 @@ export function WorkSection() {
           {projects.map((project) => (
             <div
               key={project.name}
-              className="rounded-3xl p-8 bg-zinc-950/80 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 backdrop-blur-xl flex flex-col justify-between group hover:shadow-[0_10px_40px_rgba(6,182,212,0.12)]"
+              className="rounded-3xl p-8 bg-zinc-950/80 border border-white/10 hover:border-blue-500/40 transition-all duration-300 backdrop-blur-xl flex flex-col justify-between group hover:shadow-[0_10px_40px_rgba(0,71,255,0.15)]"
             >
               <div>
                 {/* Header Badge & Industry */}
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
-                  <span className="text-[11px] font-mono text-cyan-400 font-bold px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                  <span className="text-[11px] font-mono text-blue-400 font-bold px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20">
                     {project.badge}
                   </span>
                   <span className="text-xs font-mono text-zinc-400">{project.industry}</span>
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                <h3 className="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">
                   {project.name}
                 </h3>
                 <p className="text-xs text-zinc-300 mt-1 mb-5 font-mono">{project.tagline}</p>
@@ -96,8 +98,8 @@ export function WorkSection() {
                     <p className="text-xs text-zinc-400 leading-relaxed">{project.problem}</p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-cyan-500/[0.04] border border-cyan-500/15">
-                    <span className="text-[10px] font-mono font-bold uppercase text-cyan-400 tracking-wider block mb-1">
+                  <div className="p-3.5 rounded-xl bg-blue-500/[0.04] border border-blue-500/20">
+                    <span className="text-[10px] font-mono font-bold uppercase text-blue-400 tracking-wider block mb-1">
                       The Engineered Solution
                     </span>
                     <p className="text-xs text-zinc-300 leading-relaxed">{project.solution}</p>

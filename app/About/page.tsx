@@ -5,34 +5,20 @@ export default function AboutPage() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Skitbit International",
-    url: "https://theskitbit.com",
-    logo: "https://theskitbit.com/logo.png",
+    name: "WrapVector",
+    url: "https://wrapvector.com",
+    logo: "https://wrapvector.com/images/agency-logo.png",
     description:
-      "Skitbit International is a 3D product animation agency serving clients in Miami, Los Angeles, New York, Canada, and the UK.",
+      "WrapVector builds AI-powered products, intelligent agents, and automation systems that turn complex business processes into seamless digital experiences.",
     sameAs: [
-      "https://www.instagram.com/skitbit",
-      "https://www.linkedin.com/company/skitbit",
+      "https://www.instagram.com/wrapvector/",
+      "https://www.linkedin.com/company/wrapvector/",
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Miami",
-      addressRegion: "FL",
-      addressCountry: "US",
-    },
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+1-555-555-5555",
         contactType: "customer service",
       },
-    ],
-    areaServed: [
-      { "@type": "Place", name: "Miami" },
-      { "@type": "Place", name: "Los Angeles" },
-      { "@type": "Place", name: "New York" },
-      { "@type": "Place", name: "Canada" },
-      { "@type": "Place", name: "United Kingdom" },
     ],
   };
 
@@ -49,10 +35,10 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative bg-black text-white py-20 px-6 md:px-12 lg:px-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          About Skitbit International
+          About WrapVector
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-80">
-          Pioneering the future of 3D product animation for global brands.
+          Building intelligent technology, autonomous agents, and enterprise automation for high-growth businesses.
         </p>
       </section>
 
@@ -61,28 +47,28 @@ export default function AboutPage() {
         <div className="grid gap-12 md:grid-cols-3">
           {[
             {
-              title: "3D Product Animation",
-              desc: "Photo-realistic animations that showcase your products in stunning detail.",
+              title: "Autonomous AI Agents",
+              desc: "Context-aware agents that execute multi-step business workflows with precision.",
             },
             {
-              title: "Global Reach",
-              desc: "Serving Miami, LA, New York, Canada, and the UK with world-class visuals.",
+              title: "End-to-End Automation",
+              desc: "Connecting enterprise software, CRMs, APIs, and databases into cohesive autonomous pipelines.",
             },
             {
-              title: "Cutting-edge Technology",
-              desc: "Using the latest rendering engines and motion design tools.",
+              title: "Full-Stack Product Engineering",
+              desc: "High-performance web applications, robust backends, and low-latency infrastructure.",
             },
             {
-              title: "Brand Storytelling",
-              desc: "Helping brands communicate their vision through immersive 3D visuals.",
+              title: "Enterprise Security",
+              desc: "SOC2-compliant architectures, strict access governance, and encrypted data processing.",
             },
             {
-              title: "Collaborative Workflow",
-              desc: "Work directly with our creative team for maximum efficiency.",
+              title: "Rapid Deployment Sprints",
+              desc: "From concept architecture to live production agents in structured build cycles.",
             },
             {
-              title: "SEO & Marketing Focus",
-              desc: "Optimized content to enhance your visibility on search engines.",
+              title: "Scalable Cloud Architecture",
+              desc: "Edge-distributed systems engineered for high throughput and 99.99% uptime.",
             },
           ].map((feature, index) => (
             <div
@@ -99,16 +85,16 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-20 bg-black text-center text-white px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Ready to Elevate Your Brand?
+          Ready to Automate & Scale?
         </h2>
         <p className="text-lg opacity-80 mb-8">
-          Let Skitbit International bring your products to life.
+          Let WrapVector engineer intelligent systems for your business.
         </p>
         <a
-          href="/contact"
-          className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-neutral-200 transition-all"
+          href="/#contact"
+          className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all shadow-lg shadow-cyan-500/20"
         >
-          Get in Touch
+          Build With Us
         </a>
       </section>
     </>

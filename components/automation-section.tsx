@@ -81,14 +81,14 @@ export function AutomationSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-5">
-            <Zap className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-5">
+            <Zap className="w-3.5 h-3.5 text-blue-400" />
             <span>Workflow Modernization</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight">
             If Your Team Does It Repeatedly, <br className="hidden sm:inline" />
-            <span className="text-gradient-cyan">We Can Probably Automate It.</span>
+            <span className="text-[#0047FF]">We Can Probably Automate It.</span>
           </h2>
 
           <p className="mt-5 text-base sm:text-lg text-zinc-300 max-w-2xl mx-auto">
@@ -110,7 +110,7 @@ export function AutomationSection() {
               onClick={() => setActiveWorkflow(tab.key)}
               className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeWorkflow === tab.key
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-[0_0_25px_rgba(6,182,212,0.4)] border border-cyan-400/40"
+                  ? "bg-[#0047FF] text-white shadow-[0_0_20px_rgba(0,71,255,0.4)] border border-blue-400/40"
                   : "bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 border border-white/10"
               }`}
             >
@@ -155,17 +155,15 @@ export function AutomationSection() {
           </div>
 
           {/* Automated System Card */}
-          <div className="relative rounded-3xl p-7 sm:p-9 bg-zinc-950/90 border border-cyan-500/40 shadow-[0_0_40px_rgba(6,182,212,0.15)] backdrop-blur-2xl flex flex-col justify-between group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 blur-3xl pointer-events-none" />
-
+          <div className="relative rounded-3xl p-7 sm:p-9 bg-zinc-950/90 border border-blue-500/40 shadow-[0_0_40px_rgba(0,71,255,0.15)] backdrop-blur-2xl flex flex-col justify-between group">
             <div>
               <div className="flex items-center justify-between pb-5 border-b border-white/10 mb-6">
                 <div>
-                  <span className="text-[11px] font-mono text-cyan-400 font-bold uppercase tracking-wider">After — Automated</span>
+                  <span className="text-[11px] font-mono text-blue-400 font-bold uppercase tracking-wider">After — Automated</span>
                   <h3 className="text-xl font-bold text-white mt-0.5">Engineered AI Pipeline</h3>
                 </div>
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 flex items-center gap-1.5">
-                  <Zap className="w-3 h-3 text-cyan-400" /> Sub-second Speed
+                <span className="text-xs font-mono px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30 flex items-center gap-1.5">
+                  <Zap className="w-3 h-3 text-blue-400" /> Sub-second Speed
                 </span>
               </div>
 
@@ -173,24 +171,24 @@ export function AutomationSection() {
                 {current.automated.map((step, i) => (
                   <div
                     key={i}
-                    className="p-3 rounded-xl bg-cyan-500/[0.04] border border-cyan-500/20 hover:border-cyan-400/50 transition-all flex items-center justify-between text-xs text-white"
+                    className="p-3 rounded-xl bg-blue-500/[0.04] border border-blue-500/20 hover:border-blue-400/50 transition-all flex items-center justify-between text-xs text-white"
                   >
                     <div className="flex items-center gap-2.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
                       <div>
                         <span className="font-semibold text-white">{step.label}</span>
                         <span className="text-zinc-400 text-[11px] ml-2 font-mono">({step.detail})</span>
                       </div>
                     </div>
-                    <span className="text-[11px] font-mono text-cyan-300 font-bold">{step.time}</span>
+                    <span className="text-[11px] font-mono text-blue-300 font-bold">{step.time}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-8 pt-5 border-t border-cyan-500/20 flex items-center justify-between text-xs font-mono text-cyan-300">
+            <div className="mt-8 pt-5 border-t border-blue-500/20 flex items-center justify-between text-xs font-mono text-blue-300">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <Sparkles className="w-4 h-4 text-blue-400" />
                 <span>{current.automatedTotal}</span>
               </div>
             </div>
@@ -203,7 +201,7 @@ export function AutomationSection() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold text-sm px-8 py-6 rounded-full border border-cyan-400/40 shadow-[0_0_25px_rgba(6,182,212,0.3)] transition-all"
+            className="bg-[#0047FF] hover:bg-[#0038e0] text-white font-semibold text-sm px-8 py-6 rounded-full border border-blue-400/40 shadow-[0_0_25px_rgba(0,71,255,0.4)] transition-all"
           >
             <a href="#contact" className="flex items-center gap-2">
               <span>Automate Your Team's Workflows</span>

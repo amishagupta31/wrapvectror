@@ -54,8 +54,8 @@ export function ValueProposition() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-mono uppercase tracking-widest mb-4">
-            <Zap className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono uppercase tracking-widest mb-4">
+            <Zap className="w-3.5 h-3.5 text-blue-400" />
             <span>The Value Proposition</span>
           </div>
 
@@ -77,23 +77,23 @@ export function ValueProposition() {
           {pillars.map((pillar, idx) => (
             <div
               key={pillar.name}
-              className="relative rounded-3xl p-7 bg-zinc-950/60 border border-white/10 hover:border-cyan-500/40 transition-all duration-300 backdrop-blur-xl group hover:shadow-[0_10px_40px_rgba(6,182,212,0.1)] flex flex-col justify-between"
+              className="relative rounded-3xl p-7 bg-zinc-950/60 border border-white/10 hover:border-blue-500/40 transition-all duration-300 backdrop-blur-xl group hover:shadow-[0_10px_40px_rgba(0,71,255,0.15)] flex flex-col justify-between"
             >
               {/* Top Row: Step Index & Icon */}
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-cyan-400">
+                  <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/5 border border-white/10 text-blue-400">
                     PHASE {pillar.step}
                   </span>
-                  <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-cyan-400/40 group-hover:bg-cyan-500/10 transition-all duration-300">
-                    <pillar.icon className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
+                  <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:border-blue-400/40 group-hover:bg-blue-500/10 transition-all duration-300">
+                    <pillar.icon className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" />
                   </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-1 flex items-center gap-2">
                   {pillar.name}
                 </h3>
-                <p className="text-xs font-mono text-cyan-300/80 mb-4">{pillar.tagline}</p>
+                <p className="text-xs font-mono text-blue-300/80 mb-4">{pillar.tagline}</p>
 
                 <p className="text-sm text-zinc-400 leading-relaxed mb-6">
                   {pillar.description}
@@ -104,7 +104,7 @@ export function ValueProposition() {
               <div className="pt-6 border-t border-white/10 space-y-2.5">
                 {pillar.highlights.map((h) => (
                   <div key={h} className="flex items-center gap-2.5 text-xs text-zinc-300">
-                    <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                     <span>{h}</span>
                   </div>
                 ))}
