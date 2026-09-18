@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, ArrowUpRight, Cpu, Bot, Workflow, Layers, Terminal, Sparkles } from "lucide-react"
+import { Menu, ArrowUpRight } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export function SiteHeader() {
@@ -14,7 +14,8 @@ export function SiteHeader() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
-    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -29,18 +30,26 @@ export function SiteHeader() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 pt-3 sm:pt-4">
-      <div className="container mx-auto max-w-7xl">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+        scrolled ? "px-3 sm:px-6 pt-3 sm:pt-4" : "px-0 pt-0"
+      }`}
+    >
+      <div
+        className={`mx-auto transition-all duration-300 ease-in-out ${
+          scrolled ? "max-w-7xl" : "w-full"
+        }`}
+      >
         <div
-          className={`flex h-16 items-center justify-between px-5 sm:px-7 rounded-full transition-all duration-300 ${
+          className={`flex items-center justify-between transition-all duration-300 ease-in-out ${
             scrolled
-              ? "liquid-glass-enhanced bg-black/80 shadow-[0_8px_32px_rgba(0,0,0,0.6)] border-white/15"
-              : "liquid-glass bg-black/50 border-white/10"
+              ? "h-14 sm:h-16 px-4 sm:px-7 rounded-full liquid-glass-enhanced bg-black/85 shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/15"
+              : "h-16 sm:h-20 px-4 sm:px-8 lg:px-12 rounded-none border-b border-white/10 bg-black/60 backdrop-blur-xl"
           }`}
         >
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-transparent border border-cyan-500/30 group-hover:border-cyan-400/60 transition-all duration-300 p-1.5">
+          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
+            <div className="relative flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-transparent border border-cyan-500/30 group-hover:border-cyan-400/60 transition-all duration-300 p-1.5 flex-shrink-0">
               <Image
                 src="/images/agency-logo.png"
                 alt="Agency Logo"
@@ -52,14 +61,14 @@ export function SiteHeader() {
               <div className="absolute inset-0 rounded-xl bg-cyan-400/10 blur-sm group-hover:bg-cyan-400/20 transition-all" />
             </div>
             <div className="flex flex-col">
-              <span className="font-bold tracking-tight text-white text-base sm:text-lg flex items-center gap-1.5">
+              <span className="font-bold tracking-tight text-white text-base sm:text-lg flex items-center gap-1 whitespace-nowrap">
                 WRAP<span className="text-cyan-400">VECTOR</span>
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6 text-xs xl:text-sm font-medium text-white/80">
+          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 text-xs xl:text-sm font-medium text-white/80 whitespace-nowrap">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -72,8 +81,8 @@ export function SiteHeader() {
           </nav>
 
           {/* Right Status + CTA */}
-          <div className="hidden sm:flex items-center gap-4">
-            <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] text-zinc-300">
+          <div className="hidden sm:flex items-center gap-3 xl:gap-4 flex-shrink-0">
+            <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-[11px] text-zinc-300 whitespace-nowrap">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
@@ -83,7 +92,7 @@ export function SiteHeader() {
 
             <Button
               asChild
-              className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full border border-cyan-400/30 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_28px_rgba(6,182,212,0.5)] hover:scale-[1.02] transition-all"
+              className="relative overflow-hidden group bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-cyan-400/30 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_28px_rgba(6,182,212,0.5)] hover:scale-[1.02] transition-all whitespace-nowrap"
             >
               <a href="#contact" className="flex items-center gap-1.5">
                 <span>Build With Us</span>
@@ -93,11 +102,11 @@ export function SiteHeader() {
           </div>
 
           {/* Mobile Nav Drawer */}
-          <div className="lg:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2 flex-shrink-0">
             <Button
               asChild
               size="sm"
-              className="sm:hidden bg-cyan-500 text-black font-semibold text-xs px-3.5 py-1.5 rounded-full"
+              className="sm:hidden bg-cyan-500 text-black font-semibold text-xs px-3 py-1.5 rounded-full hover:bg-cyan-400"
             >
               <a href="#contact">Build →</a>
             </Button>
@@ -113,7 +122,7 @@ export function SiteHeader() {
                   <span className="sr-only">Open navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-zinc-950/95 border-l border-white/10 p-6 flex flex-col justify-between w-72 backdrop-blur-2xl">
+              <SheetContent side="right" className="bg-zinc-950/95 border-l border-white/10 p-6 flex flex-col justify-between w-72 sm:w-80 backdrop-blur-2xl">
                 <div>
                   <div className="flex items-center gap-3 pb-6 border-b border-white/10 mb-6">
                     <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center p-1.5">
@@ -162,3 +171,4 @@ export function SiteHeader() {
     </header>
   )
 }
+
