@@ -31,19 +31,19 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ease-in-out pointer-events-none ${
         scrolled ? "px-3 sm:px-6 pt-3 sm:pt-4" : "px-0 pt-0"
       }`}
     >
       <div
-        className={`mx-auto transition-all duration-300 ease-in-out ${
-          scrolled ? "max-w-7xl" : "w-full"
+        className={`w-full transition-all duration-300 ease-in-out pointer-events-auto ${
+          scrolled ? "max-w-6xl mx-auto" : "max-w-full"
         }`}
       >
         <div
           className={`flex items-center justify-between transition-all duration-300 ease-in-out ${
             scrolled
-              ? "h-14 sm:h-16 px-4 sm:px-7 rounded-full liquid-glass-enhanced bg-black/85 shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/15"
+              ? "h-14 sm:h-16 px-4 sm:px-6 rounded-full liquid-glass-enhanced bg-black/85 shadow-[0_8px_32px_rgba(0,0,0,0.6)] border border-white/15"
               : "h-16 sm:h-20 px-4 sm:px-8 lg:px-12 rounded-none border-b border-white/10 bg-black/60 backdrop-blur-xl"
           }`}
         >
@@ -68,7 +68,7 @@ export function SiteHeader() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 text-xs xl:text-sm font-medium text-white/80 whitespace-nowrap">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 text-xs xl:text-sm font-medium text-white/80 whitespace-nowrap">
             {navLinks.map((link) => (
               <a
                 key={link.href}
